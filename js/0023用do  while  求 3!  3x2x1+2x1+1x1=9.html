@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用do  while  求 3!  3x2x1+2x1+1x1=9</title>
+</head>
+<body>
+    <script>
+        //3x2x1+2x1+1x1=9
+        var sum = 0;
+        var i =5
+        do{
+            var o =i;
+            var som = 1
+            while(o>=1){
+                som*=o;
+                o--;
+            }
+            sum+=som
+            i--
+        }while(i>=1)
+        console.log(sum)
+
+
+        //用do while 求阶乘
+        // var sum = 1;
+        // var i = 4;
+        // do{
+        //     sum *=i
+        //     i--
+        //     console.log(sum,i)
+        // }while(i>=1)
+        // console.log(sum)
+
+    </script>
+</body>
+</html>

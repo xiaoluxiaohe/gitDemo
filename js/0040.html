@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>请使用代码实现，去掉一个最高分，去掉一个最低分之后求平均分是多少？</title>
+</head>
+
+<body>
+    <script>
+        function avg(arr) {
+            var maxNumber = arr[0]
+            var minNumber = arr[0]
+            function max(arr) {
+                for (var i = 1; i <= arr.length - 1; i++) {
+                    if (maxNumber <= arr[i]) {
+                        maxNumber = arr[i]
+                    }
+                }
+                return maxNumber
+            }
+            max(arr)
+            console.log(maxNumber)
+            function min(arr) {
+                for (var i = 1; i <= arr.length - 1; i++) {
+                    if (minNumber >= arr[i]) {
+                        minNumber = arr[i]
+                    }
+                }
+                return minNumber
+            }
+            min(arr)
+            console.log(minNumber)
+            var sum = 0
+            for (var i = 0; i <= arr.length - 1; i++) {
+                sum += arr[i]
+            }
+            console.log(sum)
+            return sum = (sum - maxNumber - minNumber) / (arr.length - 2)
+        }
+
+        const arr = [1,2,3,4,5,6,7,8,9,10]
+        const r = avg(arr)
+        console.log(r);
+    </script>
+</body>
+
+</html>

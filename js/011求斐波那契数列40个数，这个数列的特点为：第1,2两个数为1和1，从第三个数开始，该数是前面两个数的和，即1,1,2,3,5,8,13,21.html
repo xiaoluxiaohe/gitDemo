@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>求斐波那契数列40个数，这个数列的特点为：第1,2两个数为1和1，从第三个数开始，该数是前面两个数的和，即1,1,2,3,5,8,13,21......</title>
+</head>
+<body>
+    <script>
+        function fib(n){
+            if(n<=2){
+                return 1
+            }
+            return fib(n-1)+fib(n-2)
+        }
+        console.log(fib(12));
+    </script>
+</body>
+</html>

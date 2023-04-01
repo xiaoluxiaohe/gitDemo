@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自己实现输入一个数获取长度</title>
+</head>
+<body>
+    <script>
+          
+            
+        function fn(){
+            const number = prompt('请输入一个数')
+            var b = 0.1
+            for(let i =1;i<=number;i++){
+                b*=10
+                let  c = parseInt(number/b)
+                if(c>0&&c<10){
+                return console.log('这个数是'+i+"位")
+                    
+                }
+            }
+        }
+      fn()
+    </script>
+</body>
+</html>

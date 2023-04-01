@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>判断一个随机输入数是不是素数</title>
+</head>
+
+<body>
+    <script>
+        //判断一个数是不是素数，素数：只有一和它本身能整除
+    //    flag = true
+    //     for(let i=2;i<=100;i++){
+    //         for(let j =2;j<=(i/2);j++){
+    //             if(i%j==0){
+    //                 flag = false
+    //                 break
+    //             }
+    //         }
+    //         if(flag){
+    //             console.log("素数：",i)
+    //         }
+    //         flag = true
+    //     }
+
+    function primeNumber1(i){
+        flag = true
+            for(let j=2;j<=(i/2);j++){
+                if(i%j==0){
+                    flag = false
+                    break
+                }
+            }
+        // return flag?console.log("素数：",i):console.log(i,"不是素数")
+        if(flag){
+                console.log("素数：",i)
+            } else{
+                console.log(i,"不是素数");
+            }   
+    }
+    primeNumber1(parseInt(Math.random()*5000))
+   
+    </script>
+</body>
+</html>

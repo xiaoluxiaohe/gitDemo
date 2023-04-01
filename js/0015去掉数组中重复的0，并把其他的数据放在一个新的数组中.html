@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>去掉数组中重复的0，并把其他的数据放在一个新的数组中</title>
+</head>
+<body>
+    <script>
+        const arr = [0,12,5,0,1,0,0,4,4,4,5]
+        const newArr = []
+        for(var i = 0;i<=arr.length-1;i++){
+            if(arr[i]!==0){
+                newArr.push(arr[i])
+            }
+        }
+        console.log(newArr)
+    </script>
+</body>
+</html>

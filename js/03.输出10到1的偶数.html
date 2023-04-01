@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  div  {
+        height: 500px;
+        line-height: 500px;
+        text-align: center;
+        margin: auto;
+        background-color: pink;
+    }
+</style>
+<body>
+   <div>123
+        <input type="text" placeholder="123456">
+   </div>
+    <script>
+      const obj = {
+        a: 1,
+        b: 2,
+        c:{
+            d:4
+        }
+    };
+    const copy = JSON.parse(JSON.stringify(obj))
+
+    console.log(copy.c.d); // 输出 {a: 1, b: 2}
+    console.log(obj.c.d='44');
+    console.log(copy.c.d);
+    
+    </script>
+</body>
+</html>

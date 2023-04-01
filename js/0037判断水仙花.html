@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edd">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>判断水仙花 例：153=1*1*1+5*5*5+3*3*3</title>
+</head>
+<body>
+    <script>
+        function water(mm){
+          for(let i =1000;i<=mm;i++){
+            var a = parseInt(i/1000)          //千位
+            var b = parseInt(i/100%10)  //百位
+            var c = parseInt(i/10%10)   //十位
+            var d = i-b*100-c*10-a*1000//个位
+            if(a*a*a*a+ b*b*b*b+c*c*c*c+d*d*d*d===i){
+                console.log(i,'是水仙花数')
+            }
+           
+          }
+        }
+        water(9998)
+    </script>
+</body>
+</html>

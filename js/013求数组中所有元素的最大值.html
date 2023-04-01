@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>求数组中所有元素的最大值</title>
+</head>
+<body>
+    <script>
+        // 思路：遍历数组，假设第一个数为最大，挨个对比，若后面的数比前面的大，则交换数的位置
+        const arr = [1,2,3,4,5,6,4,4,4,6,6,6,7,7,7,8]
+        var max = arr[0]
+        for(var i=1;i<=arr.length-1;i++){
+            if(arr[0]<=arr[i]){
+                max = arr[i]
+            }
+        }
+           
+       
+
+        console.log(max)
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Snake Game</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+
+      const gridSize = 10;
+      const gridWidth = canvas.width / gridSize;
+      const gridHeight = canvas.height / gridSize;
+
+      let snake = [
+        { x: 5, y: 5 },
+        { x: 4, y: 5 },
+        { x: 3, y: 5 },
+      ];
+      let direction = "right";
+      let food = { x: 15, y: 15 };
+
+      function drawSnake() {
+        ctx.fillStyle = "green";
+        snake.forEach((segment) => {
+          ctx.fillRect(
+            segment.x * gridSize,
+            segment.y * gridSize,
+            gridSize,
+            gridSize
+          );
+        });
+      }
+
+      function drawFood() {
+        ctx.fillStyle = "red";
+        ctx.fillRect(
+          food.x * gridSize,
+          food.y * gridSize,
+          gridSize,
+          gridSize
+        );
+      }
+
+      function moveSnake() {
+        const head = { ...snake[0] };
+        switch (direction) {
+          case "up":
+            head.y--;
+            break;
+          case "down":
+            head.y++;
+            break;
+          case "left":
+            head.x--;
+            break;
+          case "right":
+            head.x++;
+            break;
+        }
+        snake.unshift(head);
+        if (head.x === food.x && head.y === food.y) {
+          generateFood();
+        } else {
+          snake.pop();
+        }
+      }
+
+      function generateFood() {
+        food = {
+          x: Math.floor(Math.random() * gridWidth),
+          y: Math.floor(Math.random() * gridHeight),
+        };
+      }
+
+  function checkCollision() {
+  const head = snake[0];
+  if (
+    snake.slice(1).some((segment) => segment.x === head.x && segment.y === head.y)
+  ) {
+    return true;
+  }
+  if (head.x < 0 || head.x >= gridWidth || head.y < 0 || head.y >= gridHeight) {
+    return true;
+  }
+  return false;
+}
